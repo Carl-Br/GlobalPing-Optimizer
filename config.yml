@@ -1,0 +1,4 @@
+target_url: "cdn.jsdelvir.net"
+number_measurements: 10
+seconds_between_measurements: 60
+
