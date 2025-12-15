@@ -30,7 +30,7 @@ locations: ["DE", "Belgium", "NL"]
 
 | Option | Description | Example |
 |--------|-------------|---------|
-| `target_url` | The website or API endpoint to test | `"www.fh-aachen.de"` |
+| `target_url` | The website or API endpoint to test | `"cdn.jsdelivr.net"` |
 | `number_measurements` | Number of measurement rounds to perform | `2` |
 | `seconds_between_measurements` | Delay between measurement rounds | `2s` |
 | `limit_per_measurement` | Maximum number of probes per measurement | `100` |
@@ -79,7 +79,7 @@ Example CSV output includes:
 ### Example Session
 ```
 Config:
-TargetUrl: www.fh-aachen.de
+TargetUrl: cdn.jsdelivr.net
 Number_measurements: 2
 Seconds_between_measurements: 2s
 Globalping_token: set
