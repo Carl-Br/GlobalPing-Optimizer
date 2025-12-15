@@ -1,4 +1,19 @@
-target_url: "cdn.jsdelvir.net"
-number_measurements: 10
-seconds_between_measurements: 60
+target_url: "cdn.jsdelivr.net"
 
+number_measurements: 2
+seconds_between_measurements: 2s
+limit_per_measurement: 50 # Max: 50 for hourly limits and 500 for bought credits
+
+locations:
+  - "DE"
+  - "Belgium"
+  - "NL"
+#  - "FR"                    # Country code
+#  - "Poland"                # Country name
+#  - "Berlin+Germany"        # City + Country
+#  - "California"            # State/Region
+#  - "Europe"                # Continent
+#  - "Western Europe"        # Region
+#  - "AS13335"               # Autonomous System Number (e.g., Cloudflare)
+#  - "aws-us-east-1"         # Cloud provider region
+#  - "Google"                # Cloud provider
