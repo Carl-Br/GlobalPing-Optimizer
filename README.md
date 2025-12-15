@@ -52,11 +52,7 @@ locations:
 ```
 ## Usage
 ### Running the Tool
-1. Set your Globalping API token as an environment variable:
-```bash
-export GLOBALPING_TOKEN="Put_Your_Global_ping_token_here"
-```
-or in a .env file
+1. Set your Globalping API token in a .env file in your root directory:
 ```.env
 GLOBALPING_TOKEN="Put_Your_Global_ping_token_here"
 ```
