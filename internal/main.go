@@ -27,7 +27,7 @@ func main() {
 	config.Print()
 	limits, err := globalping.Limits(config.Globalping_token)
 	if err != nil {
-		return
+		os.Exit(1)
 	}
 	fmt.Println("\n" + util.BoldTerminalText("Globalping Limits:"))
 	fmt.Println(limits)

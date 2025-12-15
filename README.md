@@ -54,11 +54,11 @@ locations:
 ### Running the Tool
 1. Set your Globalping API token as an environment variable:
 ```bash
-export GLOBALPING_TOKEN="Put_Your_Global_ping_token_here"
+export GLOBALPING_TOKEN=Put_Your_Global_ping_token_here
 ```
 or in a .env file
 ```.env
-GLOBALPING_TOKEN="Put_Your_Global_ping_token_here"
+GLOBALPING_TOKEN=Put_Your_Global_ping_token_here
 ```
 2. Run the tool:
 ```bash
