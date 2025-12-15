@@ -79,34 +79,6 @@ The tool generates two types of output files in the `results/` directory:
 Example CSV output includes:
 - Location information
 - Minimum, maximum, average and median latencies
-### Example Session
-```
-Config:
-TargetUrl: cdn.jsdelivr.net
-Number_measurements: 2
-Seconds_between_measurements: 2s
-Globalping_token: set
-LimitPerMeasurement: 100
-Locations: [DE Belgium NL]
-
-Globalping Limits:
-Measurements Create Limit: 500,
-Remaining: 270,
-Reset: 2232 seconds,
-Credits Remaining: 52694
-
-Total Limits: 52964
-Required Limits/number of requests: 200
-
-s: start, q: quit
-(s/q): s
-
-Making Measurements:
-Measurements completed: 2/2 | Total duration: 9s
-Number of unfinished results: 0
-
-Detailed statistics saved to: ./results/www-fh-aachen-de_2025-12-15_18-59-08_stats.csv
-```
 ### Unfinished Results
 Some probes may not respond in time. The tool reports the count of unfinished measurements. This is normal for distributed testing.
 ## Output Files
