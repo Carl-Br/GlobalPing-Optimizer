@@ -24,17 +24,20 @@ target_url: "www.example.com"
 number_measurements: 2
 seconds_between_measurements: 2s
 limit_per_measurement: 100
-locations: ["DE", "Belgium", "NL"]
+locations:
+  - "DE"
+  - "Belgium"
+  - "NL"
 ```
 ### Configuration Options
 
-| Option | Description | Example |
-|--------|-------------|---------|
-| `target_url` | The website or API endpoint to test | `"cdn.jsdelivr.net"` |
-| `number_measurements` | Number of measurement rounds to perform | `2` |
-| `seconds_between_measurements` | Delay between measurement rounds | `2s` |
-| `limit_per_measurement` | Maximum number of probes per measurement | `100` |
-| `locations` | Array of locations to test from | See below |
+| Option | Description |
+|--------|-------------|
+| `target_url` | The website or API endpoint to test |
+| `number_measurements` | Number of measurement rounds to perform |
+| `seconds_between_measurements` | Delay between measurement rounds|
+| `limit_per_measurement` | Maximum number of probes per measurement |
+| `locations` | Array of locations to test from |
 
 ### Location Formats
 [Globalping](https://globalping.io) supports multiple "magic" input formats for locations:
