@@ -2,7 +2,7 @@
 A Go-based tool that leverages the [Globalping.io API](https://globalping.io) to analyze HTTP request latencies from multiple geographic locations, helping you identify the optimal server location for your websites or REST APIs. 
 Unlike traditional latency testing tools, it can identify optimal server placement even when the actual server location is hidden behind CDNs (like Cloudflare, Cloudfront, etc.).
 ## Demo
-https://github.com/user-attachments/assets/b12794b4-3d66-4e09-8414-0d86e6d09a81
+https://github.com/user-attachments/assets/ab22f6a4-f158-4fc2-87ef-88b32daac7ab
 ## Key Features
 - **Multi-Location Testing**: Test from multiple geographic locations simultaneously
 - **Flexible Configuration**: Support for various location formats including countries, cities, regions, ASNs, and cloud providers
