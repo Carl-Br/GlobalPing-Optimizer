@@ -81,13 +81,6 @@ Example CSV output includes:
 - Minimum, maximum, average and median latencies
 ### Unfinished Results
 Some probes may not respond in time. The tool reports the count of unfinished measurements. This is normal for distributed testing.
-## Output Files
-Results are saved with timestamps in the `results/` directory:
-```
-results/
-├── www-example-com_2025-12-15_18-59-08_stats.csv
-└── www-example-com_2025-12-15_18-59-08.jsonl
-```
 ## Best Practices
 Run the tools for a few hours or even days to get reliable data.
 ## Support
