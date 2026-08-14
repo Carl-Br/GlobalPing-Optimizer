@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"globalping/internal/config"
 	"globalping/internal/csv"
@@ -11,6 +12,9 @@ import (
 )
 
 func main() {
+	configPath := flag.String("config", "config.yml", "path to config file")
+	flag.Parse()
+
 	// logging
 	logLevel := slog.LevelInfo
 	handlerOpts := &slog.HandlerOptions{
@@ -20,7 +24,7 @@ func main() {
 	logger := slog.New(slog.NewTextHandler(os.Stdout, handlerOpts))
 	slog.SetDefault(logger)
 
-	config, err := config.LoadConfig("config.yml")
+	config, err := config.LoadConfig(*configPath)
 	if err != nil {
 		return
 	}

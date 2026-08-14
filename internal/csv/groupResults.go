@@ -8,11 +8,21 @@ func groupByCityAndNetwork(measurements []MeasurementData) map[string]*networkSt
 	networks := make(map[string]*networkStats)
 
 	unfinishedResultsCount := 0
+	cloudflareBlockedCount := 0
 	for _, measurement := range measurements {
 		for _, result := range measurement.Results {
 			// Skip results that don't have timing data
 			if result.Result.Status != "finished" {
 				unfinishedResultsCount++
+				continue
+			}
+
+			// Skip results that are actually Cloudflare edge block/challenge
+			// pages rather than a real response from the origin. These can't
+			// be detected by status code alone (Cloudflare can forward them
+			// under any status), so they'd otherwise poison the timing stats.
+			if result.isCloudflareEdgeBlock() {
+				cloudflareBlockedCount++
 				continue
 			}
 
@@ -49,5 +59,6 @@ func groupByCityAndNetwork(measurements []MeasurementData) map[string]*networkSt
 		}
 	}
 	fmt.Println("Number of unfinished results:", unfinishedResultsCount)
+	fmt.Println("Number of Cloudflare edge block/challenge results:", cloudflareBlockedCount)
 	return networks
 }

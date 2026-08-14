@@ -20,62 +20,64 @@ type MeasurementData struct {
 			Method string `json:"method"`
 		} `json:"request"`
 	} `json:"measurementOptions"`
-	ProbesCount int `json:"probesCount"`
-	Results     []struct {
-		Probe struct {
-			ASN       int      `json:"asn"`
-			City      string   `json:"city"`
-			Continent string   `json:"continent"`
-			Country   string   `json:"country"`
-			Latitude  float64  `json:"latitude"`
-			Longitude float64  `json:"longitude"`
-			Network   string   `json:"network"`
-			Region    string   `json:"region"`
-			Resolvers []string `json:"resolvers"`
-			State     *string  `json:"state"`
-			Tags      []string `json:"tags"`
-		} `json:"probe"`
-		Result struct {
-			Headers         map[string]any `json:"headers"`
-			RawBody         string         `json:"rawBody"`
-			RawHeaders      string         `json:"rawHeaders"`
-			RawOutput       string         `json:"rawOutput"`
-			ResolvedAddress string         `json:"resolvedAddress"`
-			Status          string         `json:"status"`
-			StatusCode      int            `json:"statusCode"`
-			StatusCodeName  string         `json:"statusCodeName"`
-			Timings         struct {
-				DNS       int `json:"dns"`
-				Download  int `json:"download"`
-				FirstByte int `json:"firstByte"`
-				TCP       int `json:"tcp"`
-				TLS       int `json:"tls"`
-				Total     int `json:"total"`
-			} `json:"timings"`
-			TLS struct {
-				Authorized     bool   `json:"authorized"`
-				CipherName     string `json:"cipherName"`
-				CreatedAt      string `json:"createdAt"`
-				ExpiresAt      string `json:"expiresAt"`
-				Fingerprint256 string `json:"fingerprint256"`
-				Issuer         struct {
-					C  string `json:"C"`
-					CN string `json:"CN"`
-					O  string `json:"O"`
-				} `json:"issuer"`
-				KeyBits      int    `json:"keyBits"`
-				KeyType      string `json:"keyType"`
-				Protocol     string `json:"protocol"`
-				PublicKey    string `json:"publicKey"`
-				SerialNumber string `json:"serialNumber"`
-				Subject      struct {
-					CN  string `json:"CN"`
-					Alt string `json:"alt"`
-				} `json:"subject"`
-			} `json:"tls"`
-			Truncated bool `json:"truncated"`
-		} `json:"result"`
-	} `json:"results"`
+	ProbesCount int                 `json:"probesCount"`
+	Results     []MeasurementResult `json:"results"`
+}
+
+type MeasurementResult struct {
+	Probe struct {
+		ASN       int      `json:"asn"`
+		City      string   `json:"city"`
+		Continent string   `json:"continent"`
+		Country   string   `json:"country"`
+		Latitude  float64  `json:"latitude"`
+		Longitude float64  `json:"longitude"`
+		Network   string   `json:"network"`
+		Region    string   `json:"region"`
+		Resolvers []string `json:"resolvers"`
+		State     *string  `json:"state"`
+		Tags      []string `json:"tags"`
+	} `json:"probe"`
+	Result struct {
+		Headers         map[string]any `json:"headers"`
+		RawBody         string         `json:"rawBody"`
+		RawHeaders      string         `json:"rawHeaders"`
+		RawOutput       string         `json:"rawOutput"`
+		ResolvedAddress string         `json:"resolvedAddress"`
+		Status          string         `json:"status"`
+		StatusCode      int            `json:"statusCode"`
+		StatusCodeName  string         `json:"statusCodeName"`
+		Timings         struct {
+			DNS       int `json:"dns"`
+			Download  int `json:"download"`
+			FirstByte int `json:"firstByte"`
+			TCP       int `json:"tcp"`
+			TLS       int `json:"tls"`
+			Total     int `json:"total"`
+		} `json:"timings"`
+		TLS struct {
+			Authorized     bool   `json:"authorized"`
+			CipherName     string `json:"cipherName"`
+			CreatedAt      string `json:"createdAt"`
+			ExpiresAt      string `json:"expiresAt"`
+			Fingerprint256 string `json:"fingerprint256"`
+			Issuer         struct {
+				C  string `json:"C"`
+				CN string `json:"CN"`
+				O  string `json:"O"`
+			} `json:"issuer"`
+			KeyBits      int    `json:"keyBits"`
+			KeyType      string `json:"keyType"`
+			Protocol     string `json:"protocol"`
+			PublicKey    string `json:"publicKey"`
+			SerialNumber string `json:"serialNumber"`
+			Subject      struct {
+				CN  string `json:"CN"`
+				Alt string `json:"alt"`
+			} `json:"subject"`
+		} `json:"tls"`
+		Truncated bool `json:"truncated"`
+	} `json:"result"`
 }
 
 // networkStats represents connection statistics for a network
